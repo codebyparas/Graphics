@@ -1,18 +1,42 @@
-#include <stdio.h>
-#include <conio.h>
-#include <graphics.h>
-#include <stdlib.h>
+// A C program to make a rainbow. This program would only 
+// work in Turbo C compiler in DOS compatible machine 
+#include<stdio.h> 
+#include<graphics.h> 
+#include<dos.h> 
 
-int main()
-{
-    int x, y, i;
-    int gd = DETECT, gm;
-    initgraph(&gd, &gm, "C:\\MinGW\\lib\\libbgi.a");
-    for (i = 0, x = 100, y = 50; i <= 10; i++, x += 20, y += 35)
-    {
-        settextstyle(i, 0, 2);
-        outtextxy(x, y, "Hello World!!");
-    }
-    getch();
-    closegraph();
-}
+// function for making of rainbow 
+void rainbow() 
+{ 
+	// auto detection 
+	int gdriver = DETECT,gmode; 
+	int x, y, i; 
+
+	// initialize graphics mode(passed three arguments to 
+	// initgraph function) 
+	// &gdriver is the address of gdriver variable, &gmode is 
+	// the address of gmode and 
+	// "C:\\Turboc3\\BGI" is the directory path where BGI files are stored 
+	initgraph(&gdriver,&gmode,"C:\\Turboc3\\BGI"); 
+
+	x = getmaxx() / 2;//finding centre x-ordinate of screen 
+	y = getmaxy() / 2;//finding centre y-ordinate of screen 
+
+	for (i=30; i<200; i++) 
+	{ 
+		// delay function under dos.h for holding the 
+		// function for some time 
+		delay(100); 
+
+		// selecting color for making of rainbow 
+		setcolor(i/10); 
+
+		// making of arc with fixed centre and increasing radius 
+		arc(x, y, 0, 180, i-10); 
+	} 
+} 
+// driver program 
+int main() 
+{ 
+	rainbow(); 
+	return 0; 
+} 
