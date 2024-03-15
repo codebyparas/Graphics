@@ -1,17 +1,17 @@
-#include <graphics.h> 
+#include <stdio.h>
+#include <conio.h>
+#include <graphics.h>
+main()
+{
+    int gd, gm;
+    gd = DETECT;
+    initgraph(&gd, &gm, "C:\\TC\\BGI");
 
-int main() 
-{ 
-	int gd = DETECT, gm; 
+    setfillstyle(XHATCH_FILL, RED);
+    int points[] = {320, 150, 420, 300, 250, 300, 320, 150};
 
-	int arr[] = {320, 150, 400, 250, 
-				250, 350, 320, 150}; 
+    fillpoly(4, points);
 
-	initgraph(&gd, &gm, ""); 
-
-	drawpoly(4, arr); 
-
-	getch(); 
-	closegraph(); 
-	return 0; 
-} 
+    getch();
+    closegraph();
+}
