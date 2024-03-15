@@ -1,30 +1,21 @@
-#include <graphics.h>
+#include <stdio.h>
 #include <conio.h>
-
-int main() 
+#include <graphics.h>
+main()
 {
-	//initilizing graphic driver and 
-	//graphic mode variable
-	int graphicdriver=DETECT,graphicmode;
+    int gd, gm;
+    gd = DETECT;
+    initgraph(&gd, &gm, "C:\\TC\\BGI");
+    char str[] = "Paras Sachdeva";
+    int y = 30;
+    for (int i = 0; i <= 10; i++)
+    {
+        sprintf(str, "Paras Sachdeva %d", i);
+        settextstyle(i, 0, 3);
+        outtextxy(100, y, str);
+        y += 30;
+    }
 
-	//calling initgraph with parameters
-	initgraph(&graphicdriver,&graphicmode,"c:\\turboc3\\bgi");
-
-	//Printing message for user
-	outtextxy(20, 20 + 20, "Program to print different fonts in C graphics");
-
-	//initilizing variables
-	int x = 75, y = 75, f = 0;
-
-	//for loop to print different fonts
-	for (f = 0; f <= 5; f++)
-	{
-		settextstyle(f, HORIZ_DIR, 1);
-		outtextxy(x, y, "Hello World..");
-		y = y + 20;
-	}
-
-	getch();
-
-	return 0;
+    getch();
+    closegraph();
 }
