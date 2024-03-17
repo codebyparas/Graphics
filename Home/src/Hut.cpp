@@ -63,20 +63,23 @@ int main()
 
     setcolor(7);
     line(5, 330, 600, 330);
-    for (i = 0; i < 650; i = i + 10)
-    {
-        setcolor(4);
-        settextstyle(7, 0, 5);
+    outtextxy(220, 350, "Paras Sachdeva");
 
-        char stringData1[] = "Home Sweet Home";
+    // for (i = 0; i < 650; i = i + 10)
+    // {
+    //     setcolor(4);
+    //     settextstyle(7, 0, 5);
 
-        outtextxy(0 + i, 390, stringData1);
-        delay(100);
-        setcolor(0);
-        settextstyle(7, 0, 5);
+    //     char stringData1[] = "Home Sweet Home";
 
-        outtextxy(0 + i, 390, stringData1);
-    }
+    //     outtextxy(0 + i, 390, stringData1);
+    //     delay(100);
+    //     setcolor(0);
+    //     settextstyle(7, 0, 5);
+
+    //     outtextxy(0 + i, 390, stringData1);
+    // }
+    
     getch();
     closegraph();
 
