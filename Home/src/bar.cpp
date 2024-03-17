@@ -8,6 +8,7 @@ int main()
 {
     int gd=DETECT, gm;
     initgraph(&gd,&gm,"C:\\MinGW\\lib\\libbgi.a");
+    
     setfillstyle(LINE_FILL,RED);
     line(50,300,300,300);
     line(50,300,50,50);
