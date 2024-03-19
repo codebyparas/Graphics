@@ -6,6 +6,7 @@ int main()
     int gd=DETECT, gm;
     initgraph(&gd,&gm,(char*)"");
     
+    // Main Part of Cone
     setcolor(RED);
     line(300, 60, 80, 320);
     line(300, 60, 520, 320);
@@ -13,11 +14,13 @@ int main()
     setfillstyle(SOLID_FILL, RED);
     floodfill(300, 61, RED);
 
+    // White Circle on Top
     setcolor(WHITE);
     circle(300,55,30);
     setfillstyle(SOLID_FILL, WHITE);
     floodfill(300, 55, WHITE);
 
+    // Green Strip
     setcolor(GREEN);
     ellipse(300, 190, 180, 360, 110, 20);
     ellipse(300, 220, 180, 360, 135, 30);
