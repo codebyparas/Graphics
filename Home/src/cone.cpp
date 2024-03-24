@@ -1,31 +1,29 @@
-#include <stdio.h>
-#include <conio.h>
 #include <graphics.h>
-int main()
-{
-    int gd=DETECT, gm;
-    initgraph(&gd,&gm,(char*)"");
-    
-    // Main Part of Cone
+#include <conio.h>
+#include <dos.h>
+
+int main() {
+    int gd = DETECT, gm;
+    initgraph(&gd, &gm, "");
+
+    // Draw cone
     setcolor(RED);
-    line(300, 60, 80, 320);
-    line(300, 60, 520, 320);
-    ellipse(300, 320, 180, 360, 220, 70);
     setfillstyle(SOLID_FILL, RED);
-    floodfill(300, 61, RED);
+    line(100, 200, 540, 200);
+    line(100, 200, 320, 50);
+    line(540, 200, 320, 50);
+    floodfill(320, 150, RED);
 
-    // White Circle on Top
+    // Draw base of the cap
+    setcolor(RED);
+    setfillstyle(SOLID_FILL, RED);
+    pieslice(320, 200, 0, 180, 100);
+
+    // Draw fur
     setcolor(WHITE);
-    circle(300,55,30);
     setfillstyle(SOLID_FILL, WHITE);
-    floodfill(300, 55, WHITE);
-
-    // Green Strip
-    setcolor(GREEN);
-    ellipse(300, 190, 180, 360, 110, 20);
-    ellipse(300, 220, 180, 360, 135, 30);
-    // setfillstyle(SOLID_FILL, GREEN);
-    // floodfill(301, 210, GREEN);
+    ellipse(320, 200, 0, 360, 100, 60);
+    floodfill(320, 200, WHITE);
 
     getch();
     closegraph();
