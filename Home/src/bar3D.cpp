@@ -33,9 +33,18 @@ int main()
 
 	// y axis line 
 	line(100, 50, 100, 350); 
+	line(100,50,90,60);
+	line(100,50,110,60);
+	outtextxy(80,30,"y-axis");
 
 	// x axis line 
 	line(100, 350, 400, 350); 
+	line(400, 350, 390, 340); 
+	line(400, 350, 390, 360); 
+	outtextxy(415,340,"x-axis");
+
+	outtextxy(90,355,"Origin");
+	outtextxy(230,80,"Bar-3D");
 
 	getch(); 
 	closegraph(); 
