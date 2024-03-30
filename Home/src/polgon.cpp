@@ -1,17 +1,20 @@
-#include <stdio.h>
-#include <conio.h>
 #include <graphics.h>
-main()
-{
-    int gd, gm;
-    gd = DETECT;
-    initgraph(&gd, &gm, "C:\\TC\\BGI");
 
-    setfillstyle(XHATCH_FILL, RED);
-    int points[] = {320, 150, 420, 300, 250, 300, 320, 150};
+int main() {
+    int gd = DETECT, gm;
+    initgraph(&gd, &gm, "C:\\TURBOC3\\BGI");
 
-    fillpoly(4, points);
+    // Coordinates of the octagon
+    int octagon[] = {200, 100, 300, 100, 350, 175, 300, 250, 200, 250, 150, 175, 200, 100};
+
+    // Draw octagon outline
+    drawpoly(8, octagon);
+
+    // Fill octagon with different fill style
+    setfillstyle(HATCH_FILL, BLUE);
+    fillpoly(8, octagon);
 
     getch();
     closegraph();
+    return 0;
 }
