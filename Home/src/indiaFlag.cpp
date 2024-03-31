@@ -1,72 +1,69 @@
-// C program for the above approach
-
 #include<stdio.h>
 #include<conio.h>
 #include<graphics.h>
 #include<stdlib.h>
+#include<math.h>
 
-// Driver Code
 int main()
 {
 	int gd=DETECT, gm;
-    initgraph(&gd,&gm,"C:\\MinGW\\lib\\libbgi.a");
+    initgraph(&gd,&gm,"C:\\TC\\BGI");
 
-	// Creating the base rectangle
-	line(250, 100, 250, 600);
-	line(250, 100, 250, 600);
+    // Base
+	rectangle(getmaxx()/2-100,getmaxy()-50,getmaxx()/2+100,getmaxy());
+	setfillstyle(SOLID_FILL, LIGHTGRAY);
+	floodfill(getmaxx()/2, getmaxy()-10, WHITE);
+	rectangle(getmaxx()/2-50,getmaxy()-100,getmaxx()/2+50,getmaxy()-50);
+	floodfill(getmaxx()/2, getmaxy()-90, WHITE);
 
-	// Fill the White Color
-	setfillstyle(SOLID_FILL, WHITE);
+    // Flag Pole
+	setcolor(BROWN);
+	setfillstyle(SOLID_FILL, BROWN);
+	rectangle(getmaxx()/2-10,60,getmaxx()/2,getmaxy()-100);
+	line(getmaxx()/2-10,60,getmaxx()/2-5,50);
+	floodfill(getmaxx()/2-5, 70, BROWN);
+	line(getmaxx()/2,60,getmaxx()/2-5,50);
+	floodfill(getmaxx()/2-5, 55, BROWN);
 
-	// Create and fill the top strip
-	rectangle(225, 600, 275, 610);
-	rectangle(200, 610, 300, 620);
+	// Top Strip
+	setcolor(LIGHTRED);
+	rectangle(getmaxx()/2,60,getmaxx()/2+200,100);
+	setfillstyle(SOLID_FILL,LIGHTRED);
+	floodfill(getmaxx()/2+20,75,LIGHTRED);
 
-	floodfill(227, 608, 15);
-	floodfill(202, 618, 15);
+	// Middle Strip
+	setcolor(WHITE);
+	rectangle(getmaxx()/2,100,getmaxx()/2+200,140);
+	setfillstyle(SOLID_FILL,WHITE);
+	floodfill(getmaxx()/2+20,120,WHITE);
 
-	// Fill the Light Red Color
-	setfillstyle(SOLID_FILL, LIGHTRED);
+	// Ashoka Chakra
+	setcolor(BLUE);
+	circle(getmaxx()/2+100,120,23);
+	setfillstyle(SOLID_FILL,BLUE);
+	floodfill(getmaxx()/2+100,120,BLUE);
 
-	// Create and fill the ashoka
-	// chakra with Blue
-	rectangle(250, 100, 650, 280);
-	line(250, 160, 650, 160);
-	floodfill(252, 158, 15);
+	// Spokes
+	int numSpokes = 15;
+	int centerX=getmaxx()/2+100;
+    int centerY=120;
+	int radius=23;
+	double angleIncrement = 2 * M_PI / numSpokes;
+	setcolor(WHITE);
+	for (int i = 0; i < numSpokes; i++) {
+        double angle = i * angleIncrement;
+        int x1 = centerX + radius * cos(angle);
+        int y1 = centerY + radius * sin(angle);
+        int x2 = centerX;
+        int y2 = centerY;
+        line(x1, y1, x2, y2);
+    }
 
-	// Fill the Blue Color
-	setfillstyle(SOLID_FILL, BLUE);
-
-	// Create and fill the left
-	// part of the middle strip
-
-	// Create a Circle
-	circle(450, 190, 30);
-	floodfill(452, 188, 15);
-
-	// Fill the White Color
-	setfillstyle(SOLID_FILL, WHITE);
-
-	// Create and fill the right
-	// part of the middle strip
-	line(250, 160, 480, 160);
-	line(250, 220, 480, 220);
-	floodfill(252, 162, 15);
-
-	// Fill the White Color
-	setfillstyle(SOLID_FILL, WHITE);
-
-	// Create and fill the bottom
-	// strip
-	line(480, 160, 650, 160);
-	line(480, 220, 650, 220);
-	floodfill(482, 162, 15);
-
-	// Fill the Green Color
-	setfillstyle(SOLID_FILL, GREEN);
-
-	line(250, 220, 650, 220);
-	floodfill(252, 278, 15);
+	// Bottom Strip
+	setcolor(GREEN);
+	rectangle(getmaxx()/2,140,getmaxx()/2+200,180);
+	setfillstyle(SOLID_FILL,GREEN);
+	floodfill(getmaxx()/2+20,160,GREEN);
 
 	getch();
     closegraph();

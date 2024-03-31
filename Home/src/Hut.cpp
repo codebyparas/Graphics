@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <graphics.h>
+
 int main()
 {
     int gm, x, y, gd = DETECT, i;
@@ -9,12 +10,11 @@ int main()
     int stangle = 45, endangle = 50;
     int radius = 50;
     
-    char data[] = "C:\\MinGW\\lib\\libbgi.a"; //static file
-
-    initgraph(&gd, &gm, data);
+    initgraph(&gd, &gm, "C:\\TC\\BGI");
     x = getmaxx(); // to get the co-ordinates i.e. x & y
     y = getmaxy();
     cleardevice();
+
     line(200, 150, 350, 150);
     line(140, 200, 200, 150);
     line(140, 330, 140, 200);
@@ -63,7 +63,6 @@ int main()
 
     setcolor(7);
     line(5, 330, 600, 330);
-    outtextxy(220, 350, "Paras Sachdeva");
     
     getch();
     closegraph();
