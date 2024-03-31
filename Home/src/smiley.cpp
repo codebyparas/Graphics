@@ -1,38 +1,38 @@
-#include<stdio.h>
-#include<conio.h>
-#include<graphics.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <conio.h>
+#include <graphics.h>
 
+int main() {
+    int gd = DETECT, gm;
+    initgraph(&gd, &gm, "C:\\TC\\BGI");
 
-int main()
-{
-    int gd=DETECT, gm;
-    initgraph(&gd,&gm,"C:\\MinGW\\lib\\libbgi.a");
-    setcolor(YELLOW);
-    circle(250,200,100);
-    setfillstyle(1,YELLOW);
-    floodfill(250,200,YELLOW);
+    // Draw face
+    setcolor(RED);
+    setfillstyle(SOLID_FILL, RED);
+    circle(250, 250, 150);
+    floodfill(250, 250, RED);
 
-    setcolor(WHITE);
-    circle(200,160,25);
-    setfillstyle(1,WHITE);
-    floodfill(200,160,WHITE);
-    circle(300,160,25);
-    floodfill(300,160,WHITE);
-
+    // Draw eyes
     setcolor(BLACK);
-    circle(200,165,10);
-    setfillstyle(1,BLACK);
-    floodfill(200,165,BLACK);
-    circle(300,165,10);
-    setfillstyle(1,BLACK);
-    floodfill(300,165,BLACK);
+    setfillstyle(SOLID_FILL, WHITE);
+    circle(190, 200, 25);
+    floodfill(190, 200, BLACK);
+    circle(310, 200, 25);
+    floodfill(310, 200, BLACK);
 
+    // Draw pupils
     setcolor(BLACK);
-    arc(250,200,220,320,60);
-    line(250,180,250,220);
+    setfillstyle(SOLID_FILL, BLACK);
+    circle(190, 200, 10);
+    floodfill(190, 200, BLACK);
+    circle(310, 200, 10);
+    floodfill(310, 200, BLACK);
 
-    
+    // Draw mouth (smile)
+    setcolor(BLACK);
+    setfillstyle(SOLID_FILL, BLACK);
+    arc(250, 280, 200, 340, 80);
+
     getch();
     closegraph();
     return 0;
