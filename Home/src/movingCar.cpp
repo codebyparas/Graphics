@@ -7,14 +7,13 @@
 void draw_moving_car(void) {
 	int i, j = 0;
 	int gd = DETECT, gm;
-    initgraph(&gd,&gm,"C:\\MinGW\\lib\\libbgi.a");
+    initgraph(&gd,&gm,"C:\\TC\\BGI");
 	for (i = 0; i <= 420; i = i + 10) {
 
 		// Set color of car as red
 		setcolor(RED);
 
-		// These lines for bonnet and 
-		// body of car
+		// Bonnet & Body of car
 		line(0 + i, 300, 210 + i, 300);
 		line(50 + i, 300, 75 + i, 270);
 		line(75 + i, 270, 150 + i, 270);
@@ -77,7 +76,6 @@ void draw_moving_car(void) {
 	closegraph();
 }
 
-// Driver code
 int main()
 {
 	draw_moving_car();

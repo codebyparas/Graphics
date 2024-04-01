@@ -1,13 +1,17 @@
-#include <stdio.h>
-#include <conio.h>
 #include <graphics.h>
 
 int main()
 {
     int gd, gm;
     gd = DETECT;
-    initgraph(&gd,&gm,(char*)"");
-
+    initgraph(&gd,&gm,"C:\\TC\\BGI");
+    
+    setcolor(LIGHTCYAN);
+    rectangle(50,50,450,250);
+    setfillstyle(SOLID_FILL,LIGHTCYAN);
+    floodfill(150,150,LIGHTCYAN);
+    setcolor(BLACK);
+    
     // solid
     setlinestyle(0,1,1);
     line(100,100,400,100);

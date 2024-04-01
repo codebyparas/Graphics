@@ -3,8 +3,8 @@
 #include <dos.h>
 
 int main() {
-        int gd=DETECT, gm;
-    initgraph(&gd,&gm,(char*)"");
+    int gd=DETECT, gm;
+    initgraph(&gd,&gm,"C:\\TC\\BGI");
 
     // Main Part of Cone
     setcolor(RED);
@@ -25,10 +25,12 @@ int main() {
     line(190,190,165,219);
     line(410,190,435,219);
 
+    // Circular Part
     ellipse(300, 190, 180, 360, 110, 20);
     ellipse(300, 220, 180, 360, 135, 30);
     setfillstyle(SOLID_FILL, GREEN);
     floodfill(301, 210, GREEN);
+
     getch();
     closegraph();
     return 0;

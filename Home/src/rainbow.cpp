@@ -7,7 +7,7 @@ void rainbow()
 	int gdriver = DETECT,gmode; 
 	int x, y, i; 
 
-	initgraph(&gdriver,&gmode,"C:\\Turboc3\\BGI"); 
+	initgraph(&gdriver,&gmode,"C:\\TC\\BGI"); 
 
 	x = getmaxx() / 2; 
 	y = getmaxy() / 2;
@@ -21,8 +21,9 @@ void rainbow()
 		arc(x, y, 0, 180, i-10); 
 	} 
 } 
+
 int main() 
 { 
 	rainbow(); 
 	return 0; 
-} 
+}

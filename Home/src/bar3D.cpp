@@ -1,12 +1,10 @@
-// C Implementation for bar3d() function 
 #include <graphics.h> 
 
-// driver code 
 int main() 
 { 
 	
 	int gd = DETECT, gm; 
-	initgraph(&gd, &gm, ""); 
+	initgraph(&gd, &gm, "C:\\TC\\BGI"); 
 
 	// location of sides 
 	int left, top, right, bottom; 
@@ -16,9 +14,7 @@ int main()
 
 	// top flag denotes top line. 
 	int topflag; 
-
-	// left, top, right, bottom, 
-	// depth, topflag location's 
+	
 	bar3d(left = 150, top = 250, 
 	right = 190, bottom = 350, 
 	depth = 20, topflag = 1); 

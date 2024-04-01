@@ -3,13 +3,15 @@
 #include<graphics.h>
 #include<stdlib.h>
 
-
 int main()
 {
     int i,j,r,c;
     int gd=DETECT, gm;
-    initgraph(&gd,&gm,"C:\\MinGW\\lib\\libbgi.a");
+    initgraph(&gd,&gm,"C:\\TC\\BGI");
+
     setcolor(WHITE);
+
+    // Draw Concentric Circles
     for(i=250,j=200,r=165,c=0;r>=5;r=r-10,c++)
     {
        setcolor(c);
@@ -17,6 +19,7 @@ int main()
        setfillstyle(1,c);
        floodfill(i,j,c);
     }
+
     getch();
     closegraph();
     return 0;
