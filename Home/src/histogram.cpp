@@ -1,14 +1,30 @@
 #include <stdio.h>
 #include <conio.h>
 #include <graphics.h>
-main()
+
+int main()
 {
     int gd, gm;
     gd = DETECT;
     initgraph(&gd, &gm, "C:\\TC\\BGI");
 
+    // Draw y-axis   
     line(190, 50, 190, 270);
-    line(190, 271, 520, 271);
+    line(190,50,200,60);
+    line(190,50,180,60);
+
+    // Draw x-axis
+    line(190, 271, 530, 271);
+    line(530,271,520,261);
+    line(530,271,520,281);
+
+    // Labels
+    outtextxy(540,265,"x-axis");
+    outtextxy(180,25,"y-axis");
+    outtextxy(180,280,"Origin");
+    outtextxy(300,50,"Histogram");
+
+    // Bars
     setfillstyle(SOLID_FILL, 15);
     bar(200, 80, 230, 270);
     setfillstyle(SOLID_FILL, 2);
@@ -33,4 +49,5 @@ main()
 
     getch();
     closegraph();
+    return 0;
 }
